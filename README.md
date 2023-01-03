@@ -1,2 +1,2 @@
 # wordsandvowels
-data related to vowel/word adjustment task that looks at how context effects changes bias pattern towards a vowel and words.  
+data related to vowel/word adjustment tasks that look at how context effects changes bias pattern towards a vowel and/or words.  
