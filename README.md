@@ -1,2 +1,2 @@
 # wordsandvowels
-data related to vowel/word adjustment tasks that look at how context effects changes bias pattern towards a vowel and/or words.  
+data related to vowel/word adjustment tasks that look at how context effects changes bias pattern towards a vowel and/or words.  Our thoughts are that individuals will show more bias for words -- as the word context encourages people to hear a sound more categorically. Therefore, one should show more error in reproducing a given word in the continuum whereas with vowels there should be less error. 
