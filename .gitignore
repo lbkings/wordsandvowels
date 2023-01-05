@@ -18,3 +18,4 @@
 *.pptx
 *.wav
 localonly/*
+*.DS_Store
