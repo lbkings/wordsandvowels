@@ -1,0 +1,180 @@
+---
+title: "mini assignment"
+output: pdf_document
+date: "2023-01-12"
+---
+
+```{r setup, include=FALSE}
+
+
+#reading in data for synthvowels and synthwords 
+library(tidyverse)
+library(lattice)
+
+synthvowels <- read.csv("SynthVowels.csv")
+synthwords <-read.csv("SynthWords.csv")
+
+read_csv("SynthWords.csv", show_col_types = FALSE)
+read_csv("SynthVowels.csv", show_col_types = FALSE)
+
+synthvowels <- read_csv("SynthWords.csv", show_col_types = FALSE)
+synthwords <- read_csv("SynthVowels.csv", show_col_types = FALSE)
+
+
+```
+
+
+
+```{r setup, include=FALSE}
+## removing columns that are unnecessary for data analysis 
+
+synthvowels_clean <- read.csv("SynthVowels.csv")
+synthwords_clean <-read.csv("SynthWords.csv")
+
+
+#editing column names to only include those from Gesture to C14T - removing additional columns for vowel and the word dataset + removing the column in synthwords that looks at high low probe 
+colnames(synthvowels_clean)
+synthvowels_clean %>% select(Gesture:C14T) 
+synthvowels <- synthvowels_clean %>% select(Gesture:C14T) 
+
+colnames(synthwords_clean)
+synthwords_clean %>% select(Gesture:C14T)
+synthwordsupdated <- synthwords_clean %>% select(Gesture:C14T)
+synthwordsupdated %>% select(-c(High.Low.Probe))
+synthwords <- synthwordsupdated %>% select(-c(High.Low.Probe))
+
+# datasets are now both equal with 37 variables 
+```
+
+
+
+
+```{r setup, include=FALSE}
+# creating an additional column to add to each dataset to indicate whether or not it is a vowel or a vowel embedded within a word. The notation will be embedded T or F, that way when the datasets are combined, it will be easy to differentiate between synthwords and synthvowels datasets. 
+
+
+
+#using add column to include whether or not embedded - False = vowel, True = vowel embedded in word
+
+synthvowelsnew <- synthvowels %>% 
+  add_column(embedded = "False", .after = "C14T")
+synthwordsfinal <- synthwords %>%
+  add_column(embedded = "True")
+```
+
+
+```{r setup, include=FALSE}
+#combining the csv files 
+
+
+merge(synthvowelsnew, synthwordsfinal, by=c("Gesture", "embedded"), all.x=T)
+
+synthwordsandvowels <- merge(synthvowelsnew, synthwordsfinal, by=c("Gesture", "embedded"), all.x=T)
+
+write.csv(synthwordsandvowels,"/Users/laurenkingsly/Documents/GitHub/wordsandvowels\\synthwordsfinal.csv", row.names = T)
+
+wordsandvowels <- rbind(synthvowelsnew, synthwordsfinal)
+
+```
+
+```{r setup, include=FALSE}
+## merging csv files together 
+wordsandvowels <- rbind(synthvowelsnew, synthwordsfinal)
+
+#playing with some plots, some are probably not useful, but trying to get a spread of the data 
+ggplot(wordsandvowels, aes(TTPosition,`UltPosition`)) + geom_jitter(color = "darkviolet")  
+ggplot(synthvowels, aes(UltPosition)) + geom_density()
+ggplot(data = synthvowels) + geom_point(color = "red",mapping = aes(x = TTPosition, y = PositionDiff))
+ggplot(data = synthvowels) + geom_point(color = "green",mapping = aes(x = UltPosition, y = PositionDiff))
+
+
+# playing with plots - potential graphs for report 
+## determining if there is a difference between position chosen for words and vowels by examining the position difference (or accuracy of selection based off trial or probe)
+
+
+# use this for each subject to see position difference and tone position average across the range of tones 
+ggplot(filter(wordsandvowels, Subject == 8), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
+
+ggplot(synthwordsfinal, aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter()
+
+ggplot(synthvowelsnew, aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter()
+
+
+ggplot(filter(wordsandvowels, embedded == "False"),  aes(x = TTPosition, y = PositionDiff)) + geom_boxplot(trim = FALSE) + facet_grid(vars(Subject))
+
+# Shannon Meeting Notes:
+##find zero crossing point for each subject 
+## more zero crossing points in words than vowels should be interesting finding 
+#installing split violin plots --- for each Test tone whether it is embedded or not embedded (Condition = Embedded or Not Embedded, TTPosition as Y axis )
+## find multiple x intercepts on seperate graphs for Embedded v NonEmbedded 
+# want to know where clusters on on TTPosition for each individual -- code will tel you for each subject how many means they have -- k means clustering for each subject to bin them separately -- show uncertainty for k means is different for words than non words 
+#make graphs for each subject (19): ggplot(wordsandvowels, aes(x = TTPosition, y = PositionDiff)) + geom_boxplot(trim = FALSE) - subject number and condition (word or vowel) -- made into a raincloud or dot plot or barcode or others 
+
+
+#changed to categorical variable 
+wordsandvowels$TTPosition <- as.factor(wordsandvowels$TTPosition)
+
+
+#box plot comparing the ultimate position a person chose for the probe tone divided based on whether they had to listen to vowel continuum or a word 
+ggplot(wordsandvowels) + 
+  geom_bar(aes(UltPosition, fill = embedded)) + scale_fill_manual(values = c("pink", "lightblue"))
+
+
+
+### create graph (scatterplot) with TTPosition (all tones on X axis) and Position Difference on Y axis and see if there is a crossover between tones in  (create two, one graph that is for words and the other for vowels)
+## bias by test tone 
+
+
+
+
+
+
+
+
+
+```
+
+```{r setup, include=FALSE}
+#installing papaja 
+# Install latest CRAN release
+install.packages("papaja")
+
+# Install remotes package if necessary
+if(!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+
+# Install the stable development version from GitHub
+remotes::install_github("crsh/papaja")
+
+# Install the latest development snapshot from GitHub
+remotes::install_github("crsh/papaja@devel")
+```
+
+
+```{r setup, include=FALSE}
+
+# shortcut to make new chunks: option + command + i 
+
+# set up stuff
+- references 
+- bibliography 
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
