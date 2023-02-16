@@ -1,0 +1,166 @@
+---
+title             : "Context Effects on Auditory Category Knowledge"
+shorttitle        : "Context Effects on Auditory Knowledge"
+
+author: 
+  - name          : "Shannon Heald"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "5848 S University Ave, Chicago, IL 60637"
+    email         : "smbowdre@uchicago.edu, laurenbacall@uchicago.edu"
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - "Conceptualization"
+      - "Writing - Original Draft Preparation"
+      - "Writing - Review & Editing"
+  - name          : "Stephen Van Hedger"
+    affiliation   : "2"
+    role:
+      - "Writing - Review & Editing"
+      - "Supervision"
+  - name          : "Lauren Kingsly"
+    affiliation   : "1"
+    role:
+      - "Writing - Review & Editing"
+      - "Supervision"
+affiliation:
+  - id            : "1"
+    institution   : "University of Chicago"
+  - id            : "2"
+    institution   : "University of Western Ontario"
+
+authornote: |
+  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
+
+  Enter author note here.
+
+abstract: |
+ Given the rise of AI speech to text and voice to text machines (Amazon Alexa, Siri, etc.), we believe examining how acoustics effect speech is imperative to understanding the lack of invariance problem within contexts effects of speech.
+  
+  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
+  
+  One sentence clearly stating the **general problem** being addressed by  this particular study.
+  
+  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
+  
+  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
+  
+  One or two sentences to put the results into a more **general context**.
+  
+  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  
+  <!-- https://tinyurl.com/ybremelq -->
+  
+keywords          : "auditory perception, speech perception, lack of invariance"
+wordcount         : "X"
+
+bibliography      : "r-references.bib"
+
+floatsintext      : no
+linenumbers       : yes
+draft             : no
+mask              : no
+
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+
+classoption       : "man"
+output            : papaja::apa6_pdf
+---
+
+```{r setup, include = FALSE}
+library("papaja")
+library(tidyverse)
+library(lattice)
+library(magrittr)
+r_refs("r-references.bib")
+
+```
+
+
+```{r setup, include = FALSE}
+synthvowelslong <- read.csv("SynthVowels.csv")
+synthwordslong <-read.csv("SynthWords.csv")
+
+colnames(synthvowelslong)
+synthvowelslong %>% select(Gesture:C14T) 
+synthvowelsnew <- synthvowelslong %>%select(Gesture:C14T) 
+colnames(synthwordslong)
+synthwordslong %>% select(Gesture:C14T)
+synthwordsnew <- synthwordslong %>% select(Gesture:C14T)
+synthwordsnew %>% select(-c(High.Low.Probe))
+synthwordsnew <-synthwordsnew %>% select(-c(High.Low.Probe))
+
+synthvowels <- synthvowelsnew %>% 
+  add_column(embedded = "False", .after = "C14T")
+synthwords <- synthwordsnew %>%
+  add_column(embedded = "True")
+
+wordsandvowels <- rbind(synthvowels, synthwords)
+```
+
+
+``` {r}
+
+# Examining each subject to see position difference (how far off participant was in predicting correct tone) and tone position (actual position) average across the range of tones to see if there is a convergence between tone position (actual notes) and error such that individuals perform better or worse for a particular continuum of vowels
+
+ggplot(filter(wordsandvowels, Subject == 1), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
+
+
+```
+
+
+``` {r} 
+# Examining each subject to see position difference (how far off participant was in predicting correct tone) and tone position (actual position) average across the range of tones to see if there is a convergence between tone position (actual notes) and error such that individuals perform better or worse for a particular continuum of vowels
+
+ggplot(filter(wordsandvowels, Subject == 2), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
+
+```
+
+```{r}
+#box plot comparing the ultimate position a person chose for the probe tone based on whether they had to listen to vowel continuum or a word, embedded means that the vowel was within a word, and not embedded means the participant just heard the vowel itself 
+
+ggplot(wordsandvowels) + 
+  geom_bar(aes(UltPosition, fill = embedded)) + scale_fill_manual(values = c("pink", "lightblue"))
+
+```
+Notes from Class: 
+to create comments that are collaborative, you can do <! and create a new chunk -- look at slides from Feb 9 for specifics or d2m 2023 shared main R script 
+
+
+
+
+
+
+
+
+
+# Methods
+We based our methodology from our previous paper that examined auditory category knowledge within experts and novices. [^1] <!-- Auditory category knowledge in experts and novices (Heald, Van Hedger & Nusbaum, 2014; retrieved from https://www.frontiersin.org/articles/10.3389/fnins.2014.00260/full) -->
+
+[^1]: Heald, S. L., Van Hedger, S. C., & Nusbaum, H. C. (2014). Auditory category knowledge in experts and novices. Frontiers in Neuroscience, 8, 260. 
+
+```{r}
+### the first footnote was for class practice and mini assignment 2.15
+```
+## Participants
+
+## Material
+
+## Procedure
+
+## Data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+
+# Results
+
+# Discussion
+
+
+\newpage
+
+# References
+
+::: {#refs custom-style="Bibliography"}
+:::

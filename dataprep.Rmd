@@ -10,6 +10,12 @@ date: "2023-01-12"
 #reading in data for synthvowels and synthwords 
 library(tidyverse)
 library(lattice)
+install.packages("devtools")
+devtools::install_github("crsh/papaja")
+library(devtools)
+install_packages("tinytex")
+tinytex::install_tiny()
+
 
 synthvowels <- read.csv("SynthVowels.csv")
 synthwords <-read.csv("SynthWords.csv")
