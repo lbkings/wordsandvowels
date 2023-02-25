@@ -13,18 +13,11 @@ library(lattice)
 install.packages("devtools")
 devtools::install_github("crsh/papaja")
 library(devtools)
-install_packages("tinytex")
-tinytex::install_tiny()
+install.packages("tinytex") 
+tinytex::install_tinytex()
 
+contextknowledgevowelwords <- read.csv("ContextKnowledgeVowelWords.csv")
 
-synthvowels <- read.csv("SynthVowels.csv")
-synthwords <-read.csv("SynthWords.csv")
-
-read_csv("SynthWords.csv", show_col_types = FALSE)
-read_csv("SynthVowels.csv", show_col_types = FALSE)
-
-synthvowels <- read_csv("SynthWords.csv", show_col_types = FALSE)
-synthwords <- read_csv("SynthVowels.csv", show_col_types = FALSE)
 
 
 ```
@@ -32,40 +25,14 @@ synthwords <- read_csv("SynthVowels.csv", show_col_types = FALSE)
 
 
 ```{r setup, include=FALSE}
-## removing columns that are unnecessary for data analysis 
 
-synthvowels_clean <- read.csv("SynthVowels.csv")
-synthwords_clean <-read.csv("SynthWords.csv")
-
-
-#editing column names to only include those from Gesture to C14T - removing additional columns for vowel and the word dataset + removing the column in synthwords that looks at high low probe 
-colnames(synthvowels_clean)
-synthvowels_clean %>% select(Gesture:C14T) 
-synthvowels <- synthvowels_clean %>% select(Gesture:C14T) 
-
-colnames(synthwords_clean)
-synthwords_clean %>% select(Gesture:C14T)
-synthwordsupdated <- synthwords_clean %>% select(Gesture:C14T)
-synthwordsupdated %>% select(-c(High.Low.Probe))
-synthwords <- synthwordsupdated %>% select(-c(High.Low.Probe))
-
-# datasets are now both equal with 37 variables 
 ```
 
 
 
 
 ```{r setup, include=FALSE}
-# creating an additional column to add to each dataset to indicate whether or not it is a vowel or a vowel embedded within a word. The notation will be embedded T or F, that way when the datasets are combined, it will be easy to differentiate between synthwords and synthvowels datasets. 
 
-
-
-#using add column to include whether or not embedded - False = vowel, True = vowel embedded in word
-
-synthvowelsnew <- synthvowels %>% 
-  add_column(embedded = "False", .after = "C14T")
-synthwordsfinal <- synthwords %>%
-  add_column(embedded = "True")
 ```
 
 
@@ -99,14 +66,9 @@ ggplot(data = synthvowels) + geom_point(color = "green",mapping = aes(x = UltPos
 
 
 # use this for each subject to see position difference and tone position average across the range of tones 
-ggplot(filter(wordsandvowels, Subject == 8), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
-
-ggplot(synthwordsfinal, aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter()
-
-ggplot(synthvowelsnew, aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter()
+ggplot(contextknowledgevowelwords) + aes(T3Low, T3High) + geom_jitter() + facet_grid(vars(Condition))
 
 
-ggplot(filter(wordsandvowels, embedded == "False"),  aes(x = TTPosition, y = PositionDiff)) + geom_boxplot(trim = FALSE) + facet_grid(vars(Subject))
 
 # Shannon Meeting Notes:
 ##find zero crossing point for each subject 
@@ -171,8 +133,26 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
+```{r table}
 summary(cars)
+
+library(papaja)
+library(tidyverse)
+r_refs("r-references.bib")
+mydata <- as.tibble(mtcars, rownames = "model")
+
+mytable <- mydata %>%
+  group_by(cyl) %>%
+  summarize(
+    mean.mpg = mean(mpg),
+    sd.mpg = sd(mpg),
+    n.models = n()
+  )
+apa_table(mytable, caption = "mpg stats by number of cylinders")
+
+
+
+
 ```
 
 ## Including Plots
