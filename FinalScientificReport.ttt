@@ -1,0 +1,40 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[tbp]
+
+\begin{center}
+\begin{threeparttable}
+
+\caption{\label{tab:table-meanTTPosition}}
+
+\begin{tabular}{ll}
+\toprule
+Subject & \multicolumn{1}{c}{mean.TTPosition}\\
+\midrule
+1 & 9.50\\
+2 & 9.50\\
+3 & 9.50\\
+4 & 9.50\\
+5 & 9.50\\
+6 & 9.50\\
+7 & 9.50\\
+8 & 9.50\\
+9 & 9.50\\
+10 & 9.50\\
+11 & 9.50\\
+12 & 9.50\\
+13 & 9.50\\
+14 & 9.50\\
+15 & 9.50\\
+16 & 9.50\\
+17 & 9.50\\
+18 & 9.50\\
+19 & 9.50\\
+20 & 9.50\\
+\bottomrule
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+
+\end{table*}

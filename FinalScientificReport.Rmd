@@ -68,13 +68,14 @@ classoption       : "man"
 output            : papaja::apa6_pdf
 ---
 
-```{r setup, include = FALSE}
+```{r, include = FALSE}
 library("papaja")
 library(tidyverse)
 library(lattice)
 library(magrittr)
 r_refs("r-references.bib")
-
+library(knitr)
+library(ggpubr)
 ```
 
 
@@ -97,35 +98,55 @@ synthwords <- synthwordsnew %>%
   add_column(embedded = "True")
 
 wordsandvowels <- rbind(synthvowels, synthwords)
+
+contexteffects <- wordsandvowels %>% 
+  mutate(Probe = case_when(PTPosition > 9 ~ "High", 
+                             PTPosition <= 9 ~ "Low")) %>% 
+  group_by(Subject, embedded, TTPosition, Probe) %>% 
+  summarise(MeanPosDiff = mean(PositionDiff)) 
+editedcontext <- read.csv("ContextKnowledgeVowelWords.csv")
 ```
 
 
-``` {r}
+(ref:GGPlotBoxplot) Boxplot of Speech Perception Differences Between Words and Vowels
 
-# Examining each subject to see position difference (how far off participant was in predicting correct tone) and tone position (actual position) average across the range of tones to see if there is a convergence between tone position (actual notes) and error such that individuals perform better or worse for a particular continuum of vowels
-
-ggplot(filter(wordsandvowels, Subject == 1), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
-
-
-```
-
-
-``` {r} 
-# Examining each subject to see position difference (how far off participant was in predicting correct tone) and tone position (actual position) average across the range of tones to see if there is a convergence between tone position (actual notes) and error such that individuals perform better or worse for a particular continuum of vowels
-
-ggplot(filter(wordsandvowels, Subject == 2), aes(TTPosition, PositionDiff, color = embedded)) + geom_jitter() + geom_boxplot()
+``` {r, GGPlotBoxplot, fig.cap = "(ref:GGPlotBoxplot)"}
+#graphs for my dataset 
+ggplot(contexteffects, aes(Probe, MeanPosDiff, color = embedded)) + geom_boxplot() + xlab("Probe") + ylab("Mean Position Difference") 
 
 ```
 
-```{r}
-#box plot comparing the ultimate position a person chose for the probe tone based on whether they had to listen to vowel continuum or a word, embedded means that the vowel was within a word, and not embedded means the participant just heard the vowel itself 
 
-ggplot(wordsandvowels) + 
-  geom_bar(aes(UltPosition, fill = embedded)) + scale_fill_manual(values = c("pink", "lightblue"))
+(ref:GGPlotLine) Difference in Context Effects for Words and Vowels
+
+```{r, GGPlotLine, fig.cap = "(ref:GGPlotLine)"}
+ggline(contexteffects, "Probe", "MeanPosDiff", 
+       linetype = "embedded", color = "embedded", add = "mean_se")
+```
+
+
+```{r fig-tonescale, fig.cap = "Diagram of Tones Used"}
+#figure of tones 
+include_graphics("tones.png")
 
 ```
-Notes from Class: 
-to create comments that are collaborative, you can do <! and create a new chunk -- look at slides from Feb 9 for specifics or d2m 2023 shared main R script 
+As referenced in Table\ \@ref(tab:table-meanTTPosition) each subject was counterbalanced such that they received a mean trial tone position across all trials of 9.5 (which correlates to x note)
+
+In Figure\ \@ref(fig:GGPlotBoxplot) we can see that the there was a difference in bias between participants identification of vowels versus words when given a high tone compared to a lower tone.
+
+Whereas, we can see in Figure\ \@ref(fig:GGPlotLine) that a word or vowel (embedded versus non-embedded) effects the overall bias for the tones in a different way. For example, high probe tones for vowels embedded within a word have a higher bias than vowels themselves. 
+
+The Figure\ \@ref(fig:fig-tonescale) represents the range of tones used in the experiment and the starting tones indicate the probe tones. 
+
+
+```{r table-meanTTPosition}
+mytable <- contexteffects %>%
+  group_by(Subject) %>%
+  summarize(
+    mean.TTPosition = mean(TTPosition) 
+  ) %>% apa_table()
+mytable
+```
 
 
 
@@ -141,7 +162,7 @@ We based our methodology from our previous paper that examined auditory category
 [^1]: Heald, S. L., Van Hedger, S. C., & Nusbaum, H. C. (2014). Auditory category knowledge in experts and novices. Frontiers in Neuroscience, 8, 260. 
 
 ```{r}
-### the first footnote was for class practice and mini assignment 2.15
+
 ```
 ## Participants
 
@@ -150,7 +171,7 @@ We based our methodology from our previous paper that examined auditory category
 ## Procedure
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+
 
 
 # Results
@@ -158,9 +179,9 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 # Discussion
 
 
-\newpage
+
 
 # References
 
-::: {#refs custom-style="Bibliography"}
-:::
+
+
