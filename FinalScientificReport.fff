@@ -12,3 +12,10 @@
 \includegraphics{FinalScientificReport_files/figure-latex/GGPlotLine-1.pdf}
 \caption{\label{fig:GGPlotLine}Difference in Context Effects for Words and Vowels}
 \end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{tones.png}
+\caption{\label{fig:fig-tonescale}Diagram of the range of tones used for the probe and target tones}
+\end{figure*}

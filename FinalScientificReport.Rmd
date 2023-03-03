@@ -53,9 +53,9 @@ abstract: |
 keywords          : "auditory perception, speech perception, lack of invariance"
 wordcount         : "X"
 
-bibliography      : "r-references.bib"
+bibliography      : "referencez.bib"
 
-floatsintext      : no
+floatsintext      : yes
 linenumbers       : yes
 draft             : no
 mask              : no
@@ -68,18 +68,15 @@ classoption       : "man"
 output            : papaja::apa6_pdf
 ---
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 library("papaja")
 library(tidyverse)
 library(lattice)
 library(magrittr)
-r_refs("r-references.bib")
+r_refs("referencez.bib")
 library(knitr)
 library(ggpubr)
-```
 
-
-```{r setup, include = FALSE}
 synthvowelslong <- read.csv("SynthVowels.csv")
 synthwordslong <-read.csv("SynthWords.csv")
 
@@ -124,12 +121,14 @@ ggline(contexteffects, "Probe", "MeanPosDiff",
        linetype = "embedded", color = "embedded", add = "mean_se")
 ```
 
+(ref:fig-tonescale-caption) Diagram of the range of tones used for the probe and target tones
 
-```{r fig-tonescale, fig.cap = "Diagram of Tones Used"}
+```{r fig-tonescale, echo = FALSE, fig.cap = "(ref:fig-tonescale-caption)"}
 #figure of tones 
-include_graphics("tones.png")
+knitr::include_graphics("tones.png")
 
 ```
+
 As referenced in Table\ \@ref(tab:table-meanTTPosition) each subject was counterbalanced such that they received a mean trial tone position across all trials of 9.5 (which correlates to x note)
 
 In Figure\ \@ref(fig:GGPlotBoxplot) we can see that the there was a difference in bias between participants identification of vowels versus words when given a high tone compared to a lower tone.
@@ -159,6 +158,8 @@ mytable
 # Methods
 We based our methodology from our previous paper that examined auditory category knowledge within experts and novices. [^1] <!-- Auditory category knowledge in experts and novices (Heald, Van Hedger & Nusbaum, 2014; retrieved from https://www.frontiersin.org/articles/10.3389/fnins.2014.00260/full) -->
 
+
+
 [^1]: Heald, S. L., Van Hedger, S. C., & Nusbaum, H. C. (2014). Auditory category knowledge in experts and novices. Frontiers in Neuroscience, 8, 260. 
 
 ```{r}
@@ -166,24 +167,28 @@ We based our methodology from our previous paper that examined auditory category
 ```
 ## Participants
 
+
+
 ## Material
 
 ## Procedure
-
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
 
 
 ## Data analysis
-
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
 
 
 # Results
 
 # Discussion
-
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
 
 
 
 # References
-
+::: {#refs custom-style="Bibliography"}
+:::
 
 
