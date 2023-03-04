@@ -34,7 +34,7 @@ authornote: |
   Enter author note here.
 
 abstract: |
- Given the rise of AI speech to text and voice to text machines (Amazon Alexa, Siri, etc.), we believe examining how acoustics effect speech is imperative to understanding the lack of invariance problem within contexts effects of speech.
+ Given the rise of AI speech to text and voice to text machines (Amazon Alexa, Siri, etc.), we believe examining how acoustics effect speech is imperative to understanding the lack of invariance problem within contexts effects of speech [@appelbaum:1996].
   
   Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
   
@@ -67,6 +67,16 @@ footnotelist      : no
 classoption       : "man"
 output            : papaja::apa6_pdf
 ---
+
+introduction:
+
+In order for us to perceive the world around us, we must use categorical knowledge. From breaking apart a musical composition, to phonetics used within speech, auditory category knowledge is essential for individuals to understand auditory events [@posner:1968, pg 4]. 
+Two areas of category knowledge can be applied to auditory events and are necessary in order for us to infer meaning. The first arises from an associative connection to an acoustic event (e.g. doorbell ring) - an isolated concept [@goldstone:1996]. In this way, similar acoustic patterns may be compared to those that we have within our minds. The second broad area of conceptual objects are referred to as interrelated concepts [@deSaussure:19161959;@goldstone:1996]. When applied to auditory objects, it refers to how auditory objects are mapped to sound patterns which are linked within a web.Theinterrelatedness of the concepts are then defined by themselves but also through their relation to other concepts [@heald:2014].
+
+
+
+
+
 
 ```{r setup, include = FALSE}
 library("papaja")
@@ -135,7 +145,7 @@ In Figure\ \@ref(fig:GGPlotBoxplot) we can see that the there was a difference i
 
 Whereas, we can see in Figure\ \@ref(fig:GGPlotLine) that a word or vowel (embedded versus non-embedded) effects the overall bias for the tones in a different way. For example, high probe tones for vowels embedded within a word have a higher bias than vowels themselves. 
 
-The Figure\ \@ref(fig:fig-tonescale) represents the range of tones used in the experiment and the starting tones indicate the probe tones. 
+The Figure\ \@ref(fig:fig-tonescale) represents the range of tones used in the experiment and the starting tones indicate the probe tones. This figure is based on the [-@heald:2014] paper that we ran. 
 
 
 ```{r table-meanTTPosition}
@@ -156,7 +166,7 @@ mytable
 
 
 # Methods
-We based our methodology from our previous paper that examined auditory category knowledge within experts and novices. [^1] <!-- Auditory category knowledge in experts and novices (Heald, Van Hedger & Nusbaum, 2014; retrieved from https://www.frontiersin.org/articles/10.3389/fnins.2014.00260/full) -->
+We based our methodology from our previous paper that examined auditory category knowledge within experts and novices [@heald:2014].[^1] <!-- Auditory category knowledge in experts and novices (Heald, Van Hedger & Nusbaum, 2014; retrieved from https://www.frontiersin.org/articles/10.3389/fnins.2014.00260/full) -->
 
 
 
@@ -172,11 +182,12 @@ We based our methodology from our previous paper that examined auditory category
 ## Material
 
 ## Procedure
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur [-@appelbaum:1996]
 
 
 ## Data analysis
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae [-@massaro:1975] dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+[@posner:1968, pg 4] 
 
 
 # Results
