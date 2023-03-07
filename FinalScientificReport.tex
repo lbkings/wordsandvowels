@@ -195,26 +195,33 @@ Correspondence concerning this article should be addressed to Shannon Heald, 584
 
 \affiliation{\vspace{0.5cm}\textsuperscript{1} University of Chicago\\\textsuperscript{2} University of Western Ontario}
 
-\abstract{%
-Given the rise of AI speech to text and voice to text machines (Amazon Alexa, Siri, etc.), we believe examining how acoustics effect speech is imperative to understanding the lack of invariance problem within contexts effects of speech.
-
-Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
-
-One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
-
-One sentence summarizing the main result (with the words ``\textbf{here we show}'' or their equivalent).
-
-Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
-
-One or two sentences to put the results into a more \textbf{general context}.
-
-Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
-}
-
-
-
 \begin{document}
 \maketitle
+
+introduction:
+
+In order for us to perceive the world around us, we must use categorical knowledge. From breaking apart a song, to phonetics used within speech, auditory category knowledge is essential for individuals to understand auditory events (Michael I. Posner, Steven W. Keele, 1968, pg 4).
+Two areas of category knowledge can be applied to auditory events and are necessary in order for us to infer meaning. The first stems from an associative connection to an acoustic event (e.g.~doorbell ring) - an isolated concept (\textbf{goldstone:1996?}). In this way, similar acoustic patterns may be compared to those that we have within our minds. The second broad area of conceptual objects are referred to as interrelated concepts (Ferdinand de Saussure, 1968; \textbf{goldstone:1996?}). When applied to auditory objects, it refers to how auditory objects are mapped to sound patterns which are linked within a web. The interrelatedness of the concepts are then defined by themselves but also through their relation to other concepts (Shannon L.M. Heald, Stephen C. Van Hedger, Howard C. Nusbaum, 2014). Concepts themselves within the web of related concepts provides the avenue for generalization. Therefore, the main difference between isolated and interrelated concepts is that isolated concepts do not have systematicity that interrelated concepts have, and therefore cannot be generalized. The current study draws on the research of our previous study which examined how generalized not knowledge can guide an estimate of a starting tone to match a target tone with experts (those who have absolute pitch) and novices (Shannon L.M. Heald, Stephen C. Van Hedger, Howard C. Nusbaum (2014)). In this study, individuals, regardless of experience, were asked to adjust a probe tone to match the target tone pitch. However, the tone was presented as a continuum or within a word. Instead of looking at the variation between experts and novices, we were interested in looking at how context effects change the bias patterns. The idea would be that for words, individuals would show more bias because the word context encourages a person to hear the sound more categorically. We expect individuals to show more error in reproducing a given token from a word continuum and for vowels there should be less error. This belief is strengthened by findings in the Heald et al.~paper as word context enhances the use of category knowledge and as such, it may diminish the ability to replicate the exact token from the continuum heard. We hope to explore this belief by examining the individual deviation between the probe and target tone, finding the error of what people reproduce based on where they heard a vowel continuum or word, and be able to understand what information people retain based on context.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+We based our methodology from our previous paper that examined auditory category knowledge within experts and novices.\footnote{Heald, S. L., Van Hedger, S. C., \& Nusbaum, H. C. (2014). Auditory category knowledge in experts and novices. Frontiers in Neuroscience, 8, 260.}
+
+Nineteen undergraduates were recruited from the University of Chicago community and were between 18 and 26 years of age. It was not a requirement of the study for individuals to have musical experience, however, we asked participants to report their music experience in a questionnaire after the study. Participants were either given course credit or paid for their participation in the study. All participants did not report a history of a speech or hearing disorder.
+
+The experiment itself consisted of a tone adjustment task where a target tone was matched by varying the frequency of a probe tone (sinewave tones were generated using Matlab). On each trial, participants were asked to click the button with a T on it to hear the target tone, followed by one second of white noise. Individuals had to then press a button labeled P to hear the probe tone. The timing between listening to the target tone and the probe tone was not predetermined but rather set by the participant. Individuals were then asked to try their best to adjust the probe tone to match the target tone they first heard. Participants adjusted the probe tone by manually clicking and listening to other tones that were present on the screen after the presentation of the target tone. The participants could arrange the tones in any fashion they wanted, with the goal of placing the tone that sounded most like the target tone in the first position (or top of the screen) and the least likely option last. These tones were comprised of tones that were higher in frequency in the series as well as tones that were lower in frequency. Higher frequency tones modified the target tone in 66-cent increments, while the lower frequency tones modified the target tone in 33 cent increments. A step size of 33 cents was chosen because it is above most listeners threshold for noticing pitch differences. Participants were given as long as they needed to adjust the probe tone. When participants were certain of their answer, they confirmed their answer and continued onto the next trial. This was a within subjects design. Within the vowel condition, participants heard a continuum of vowels that varied in acoustic frequency range in both the target and probe tones. In the second condition, participants heard a vowel and then heard a word that had the same or similar vowel as the target vowel. There were 18 probes in total across both conditions, and there were multiple target tones used across trials that were counterbalanced in a randomized fashion to omit any over or underestimation of the tones.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+While results are preliminary, the first calculation was examining if there was a difference in error bias (represents how many 33-cent steps an individual took towards reaching what they perceived was correct) based on whether the tone presented to the individual started high or low. To visualize this, we first combined both datasets (words and vowels) and indicated whether the row corresponded to a word (embedded) or a vowel (not embedded) that the participant heard. We used the datasets context effects and wordsandvowels.The tones were delineated based on whether they were high pitch or low pitch with 1-9 (exclusive) representing low tones, and 9-18 (inclusive) representing high tones. Our first visual comparison was to see whether the Probe had an impact on the error bias the participant demonstrated. Mean Position Difference was calculated by taking the position of the actual target tone and subtracting it from the position of the tone the individual thought was correct. As referenced in Table~\ref{tab:table-MeanPosDiff} each subject bias toward the tones, or mean position difference between the probe and target tone is displayed. Overall, half of the individuals overestimated the target tone, while the other half underestimated the target tone. Figure~\ref{fig:fig-tonescale}, however, represents the range of tones used in the experiment and the starting tones indicate the probe tones. This figure is based on the (2014) paper that this experiment is predicated on.
+In Figure~\ref{fig:GGPlotBoxplot} we can see that the there was a difference in bias between participants identification of vowels versus words when given a high tone compared to a lower tone. Specifically, individuals tend to overestimate the target tone position when presented with a high probe first compared to a lower tone probe. Individuals are more likely to underestimate the position of the target tone when presented with a low tone probe, however, the effect is most prominent for words rather than vowels. This finding would be in line with our hypothesis that individuals would hear the sound more categorically within in a word, and thus showcase more bias because of the context effect. Likewise, individuals that heard the higher probe tone showed more overestimation for the embedded condition (words) than vowels. While the boxplot shows some evidence for differing error bias rates based on the probe tone, we wanted to further investigate whether there was a crossover point whereby a low tone effects the mean position difference of a vowel more . To examine this, we created a line plot seen in Figure~\ref{fig:GGPlotLine}. Visual examination yields that can see in Figure~\ref{fig:GGPlotLine} that a word or vowel (embedded versus non-embedded) effects the overall bias for the tones in a different way. This graph also indicates that high probe tones presented with vowels embedded within a word (embedded) have a higher bias than vowels themselves. Overall, this graph depicts that words have a higher bias rate when presented with both a high or low tone probe comparatively speaking to a vowel. The results from visual inspection also fall within our hypothesis that words will elicit more bias as it enhances category knowledge and thus reduces the likelihood that the individual can recreate the actual sound heard. To further disambiguate the relationship between the target tone position and bias a participant had toward estimating the correct tone, we conducted a 2-way ANOVA comparing the effect of ``TTPosition'' on ``MeanPosDiff'', two variables in our dataset that represent target tone position and bias, respectively. This analysis yielded a very strong p-value of a \textless{} 0.01. From this analysis, we can infer that there is an effect of the target tone position (low or high) on the overall bias a participant demonstrates on a given trial. Further examination of the data will include looking at individual crossover points within each of the 19 subjects to see when the bias between words and vowels flips based on their starting tone, and how bias changes over the duration of a trial.
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+Taken together, the preliminary analyzed data from this experiment provide evidence that context effects can enhance categorical knowledge, and thus provides supporting evidence for lack of invariance problem. Here, listeners had more difficulty with the acoustic variability of the tone for words because of the heightened use of categorical knowledge whereas that context effect was not present for the vowel continuum. Thus, we have showcased empirical evidence that context effects modulate the accuracy of individuals selecting tones.
 
 
 
@@ -240,20 +247,12 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \caption{\label{fig:fig-tonescale}Diagram of the range of tones used for the probe and target tones}
 \end{figure}
 
-As referenced in Table~\ref{tab:table-meanTTPosition} each subject was counterbalanced such that they received a mean trial tone position across all trials of 9.5 (which correlates to x note)
-
-In Figure~\ref{fig:GGPlotBoxplot} we can see that the there was a difference in bias between participants identification of vowels versus words when given a high tone compared to a lower tone.
-
-Whereas, we can see in Figure~\ref{fig:GGPlotLine} that a word or vowel (embedded versus non-embedded) effects the overall bias for the tones in a different way. For example, high probe tones for vowels embedded within a word have a higher bias than vowels themselves.
-
-The Figure~\ref{fig:fig-tonescale} represents the range of tones used in the experiment and the starting tones indicate the probe tones.
-
 \begin{table}[tbp]
 
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:table-meanTTPosition}}
+\caption{\label{tab:table-MeanPosDiff}Overall Bias in Correct Tone Position Selection for Subjects}
 
 \begin{tabular}{ll}
 \toprule
@@ -287,42 +286,30 @@ Subject & \multicolumn{1}{c}{mean.MeanPosDiff}\\
 
 \end{table}
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
 
-We based our methodology from our previous paper that examined auditory category knowledge within experts and novices. \footnote{Heald, S. L., Van Hedger, S. C., \& Nusbaum, H. C. (2014). Auditory category knowledge in experts and novices. Frontiers in Neuroscience, 8, 260.}
 
-\hypertarget{participants}{%
-\subsection{Participants}\label{participants}}
-
-\hypertarget{material}{%
-\subsection{Material}\label{material}}
-
-\hypertarget{procedure}{%
-\subsection{Procedure}\label{procedure}}
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
-
-\hypertarget{data-analysis}{%
-\subsection{Data analysis}\label{data-analysis}}
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
-
-\hypertarget{results}{%
-\section{Results}\label{results}}
-
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, \{r my\_chunk, fig.cap = ``Diagram of the range of tones used for the probe and target tones''\}
-
-sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+\begin{verbatim}
+##              Df Sum Sq Mean Sq F value Pr(>F)    
+## MeanPosDiff   1   2134  2133.8   151.3 <2e-16 ***
+## Residuals   978  13791    14.1                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
 
 \hypertarget{references}{%
 \section{References}\label{references}}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-deSaussure:19161959}{}}%
+Ferdinand de Saussure. (1968). \emph{A course in general linguistics}. Retrieved from \url{https://doi.org/10.1037/h0025953}
+
+\leavevmode\vadjust pre{\hypertarget{ref-posner:1968}{}}%
+Michael I. Posner, Steven W. Keele. (1968). \emph{On the genesis of abstract ideas}. Retrieved from \url{https://doi.org/10.1037/h0025953}
+
+\leavevmode\vadjust pre{\hypertarget{ref-heald:2014}{}}%
+Shannon L.M. Heald, Stephen C. Van Hedger, Howard C. Nusbaum. (2014). \emph{Auditory category knowledge in experts and novices}. \emph{8}. Retrieved from \url{https://doi.org/10.3389/fnins.2014.00260}
+
 \end{CSLReferences}
 
 
