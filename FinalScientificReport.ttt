@@ -5,7 +5,7 @@
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:table-meanTTPosition}}
+\caption{\label{tab:table-MeanPosDiff}Overall Bias in Correct Tone Position Selection for Subjects}
 
 \begin{tabular}{ll}
 \toprule
