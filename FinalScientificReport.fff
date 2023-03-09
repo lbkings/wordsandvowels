@@ -3,14 +3,14 @@
 
 \centering
 \includegraphics{FinalScientificReport_files/figure-latex/GGPlotBoxplot-1.pdf}
-\caption{\label{fig:GGPlotBoxplot}Boxplot of Speech Perception Differences Between Words and Vowels}
+\caption{\label{fig:GGPlotBoxplot}Boxplot of speech perception differences between words and vowels}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
 
 \centering
 \includegraphics{FinalScientificReport_files/figure-latex/GGPlotLine-1.pdf}
-\caption{\label{fig:GGPlotLine}Difference in Context Effects for Words and Vowels}
+\caption{\label{fig:GGPlotLine}Difference in context effects for words and vowels}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
